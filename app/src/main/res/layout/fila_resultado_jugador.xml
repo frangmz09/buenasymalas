@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_fila_blanca"
+    android:paddingStart="10dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="9dp"
+    android:paddingBottom="9dp">
+
+    <TextView
+        android:id="@+id/avatar"
+        style="@style/Texto.Titulo"
+        android:layout_width="@dimen/avatar_fila"
+        android:layout_height="@dimen/avatar_fila"
+        android:gravity="center"
+        android:textSize="15sp"
+        tools:text="R" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="11dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nombre"
+            style="@style/Texto.Cuerpo.Fila"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Rocho" />
+
+        <TextView
+            android:id="@+id/stats"
+            style="@style/Texto.Cuerpo.Secundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro_22"
+            tools:text="20 jugadas · 13 ganadas" />
+    </LinearLayout>
+</LinearLayout>

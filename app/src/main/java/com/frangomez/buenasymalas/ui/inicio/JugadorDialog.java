@@ -31,6 +31,16 @@ public final class JugadorDialog {
 
     public static Dialog crear(@NonNull Context context, @Nullable Player existente,
                                @NonNull AlGuardar alGuardar) {
+        return crear(context, existente, null, alGuardar);
+    }
+
+    /**
+     * @param nombreSugerido precarga el nombre al crear uno nuevo (viene del buscador de la
+     *                       mesa, cuando lo que se tipeó no matcheó a nadie existente). Se
+     *                       ignora si {@code existente} no es null: ahí manda el nombre real.
+     */
+    public static Dialog crear(@NonNull Context context, @Nullable Player existente,
+                               @Nullable String nombreSugerido, @NonNull AlGuardar alGuardar) {
         View vista = LayoutInflater.from(context).inflate(R.layout.dialog_jugador, null);
         EditText nombre = vista.findViewById(R.id.nombre);
         EditText alias = vista.findViewById(R.id.alias);
@@ -42,6 +52,9 @@ public final class JugadorDialog {
         if (existente != null) {
             nombre.setText(existente.name);
             alias.setText(existente.alias);
+        } else if (nombreSugerido != null) {
+            nombre.setText(nombreSugerido);
+            nombre.setSelection(nombreSugerido.length());
         }
 
         List<Runnable> repintar = new ArrayList<>();

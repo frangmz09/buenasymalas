@@ -11,8 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MediatorLiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.frangomez.buenasymalas.R;
 import com.frangomez.buenasymalas.data.Player;
@@ -23,6 +27,7 @@ import com.frangomez.buenasymalas.ui.WoodDrawable;
 import com.frangomez.buenasymalas.ui.marcador.MarcadorFragment;
 import com.frangomez.buenasymalas.ui.perfil.PerfilFragment;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,11 +43,15 @@ public class InicioFragment extends Fragment implements JugadoresAdapter.Escucha
 
     private FragmentInicioBinding binding;
     private TrucoRepository repo;
+    private InicioViewModel vm;
     private JugadoresAdapter adapter;
 
     private int tamEquipo = 1;
     private boolean conFlor = false;
     private int objetivo = Reglas.A_TREINTA;
+
+    /** Última lista completa de jugadores conocida, para resolver ids de la mesa a Player. */
+    private List<Player> todosLosJugadores = new ArrayList<>();
 
     @Nullable
     @Override
@@ -55,6 +64,7 @@ public class InicioFragment extends Fragment implements JugadoresAdapter.Escucha
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         repo = TrucoRepository.getInstance(requireContext());
+        vm = new ViewModelProvider(this).get(InicioViewModel.class);
 
         int madera = ContextCompat.getColor(requireContext(), R.color.madera);
         binding.raiz.setBackground(
@@ -63,6 +73,7 @@ public class InicioFragment extends Fragment implements JugadoresAdapter.Escucha
         adapter = new JugadoresAdapter(this);
         binding.jugadores.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.jugadores.setAdapter(adapter);
+        cablearSwipeParaSacar();
 
         binding.formato1v1.setOnClickListener(v -> setFormato(1));
         binding.formato2v2.setOnClickListener(v -> setFormato(2));
@@ -74,7 +85,8 @@ public class InicioFragment extends Fragment implements JugadoresAdapter.Escucha
         binding.a30.setOnClickListener(v -> setObjetivo(Reglas.A_TREINTA));
 
         binding.sumarJugador.setOnClickListener(v ->
-                JugadorDialog.crear(requireContext(), null, this::guardar).show());
+                AgregarJugadorSheet.nueva(vm.mesaIdsActuales())
+                        .show(getChildFragmentManager(), "sumar"));
         binding.empezar.setOnClickListener(v -> empezar());
         binding.irAlMuseo.setOnClickListener(v ->
                 NavHostFragment.findNavController(this).navigate(R.id.a_galeria));
@@ -83,17 +95,71 @@ public class InicioFragment extends Fragment implements JugadoresAdapter.Escucha
         setFlor(conFlor);
         setObjetivo(objetivo);
 
-        repo.observarJugadores().observe(getViewLifecycleOwner(), jugadores -> {
+        // "EN LA MESA" es la selección de esta partida, no toda la tabla: se combinan las dos
+        // fuentes (todos los jugadores, y quiénes están en la mesa) y se recalcula el
+        // subconjunto cada vez que cualquiera de las dos cambie.
+        MediatorLiveData<List<Player>> mesa = new MediatorLiveData<>();
+        mesa.addSource(repo.observarJugadores(), todos -> {
+            todosLosJugadores = todos;
+            mesa.setValue(resolverMesa(vm.mesaIdsActuales()));
+        });
+        mesa.addSource(vm.mesaIds(), ids -> mesa.setValue(resolverMesa(ids)));
+
+        mesa.observe(getViewLifecycleOwner(), jugadores -> {
             adapter.setJugadores(jugadores);
-            if (adapter.getMano() == 0 && !jugadores.isEmpty()) {
-                adapter.setMano(jugadores.get(0).id);
+            boolean manoPresente = false;
+            for (Player p : jugadores) {
+                if (p.id == adapter.getMano()) {
+                    manoPresente = true;
+                    break;
+                }
+            }
+            if (!manoPresente) {
+                adapter.setMano(jugadores.isEmpty() ? 0 : jugadores.get(0).id);
             }
             cargarStats(jugadores);
         });
     }
 
-    private void guardar(Player jugador) {
-        repo.guardarJugador(jugador);
+    /** Resuelve los ids de la mesa a `Player`, en el mismo orden en que se fueron agregando. */
+    private List<Player> resolverMesa(long[] ids) {
+        List<Player> resultado = new ArrayList<>();
+        for (long id : ids) {
+            for (Player p : todosLosJugadores) {
+                if (p.id == id) {
+                    resultado.add(p);
+                    break;
+                }
+            }
+        }
+        return resultado;
+    }
+
+    /** Deslizar una fila la saca de la mesa (no de la base: puede volver a buscarse). */
+    private void cablearSwipeParaSacar() {
+        ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(
+                0, ItemTouchHelper.START | ItemTouchHelper.END) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView rv, @NonNull RecyclerView.ViewHolder vh,
+                                  @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int posicion = viewHolder.getBindingAdapterPosition();
+                if (posicion == RecyclerView.NO_POSITION) {
+                    return;
+                }
+                vm.quitar(adapter.getJugadores().get(posicion).id);
+            }
+        };
+        new ItemTouchHelper(callback).attachToRecyclerView(binding.jugadores);
+    }
+
+    /** Llamado por {@link AgregarJugadorSheet} al elegir a alguien, exista o se acabe de crear. */
+    void jugadorAgregado(long id) {
+        vm.agregar(id);
     }
 
     // --- Reglas de la partida ----------------------------------------------------------------

@@ -8,6 +8,14 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
 ## [Unreleased]
 
 ### Added
+- Flecha de volver en Perfil, Historial y Museo.
+- "+ Sumar jugador" busca entre los jugadores existentes a medida que se tipea, y
+  ofrece crear uno nuevo si no hay coincidencia. "EN LA MESA" pasa a ser la
+  selección de la partida actual (se recuerda mientras la app esté abierta), no
+  toda la tabla de jugadores como antes.
+- Deslizar una fila en "EN LA MESA" la saca de la partida sin borrarla de la base.
+
+### Added
 - Proyecto Gradle con AGP 8.7.3, Java 17, minSdk 26 y viewBinding.
 - Design system: tokens de color, dimensiones, estilos de texto por rol y las tres
   familias tipográficas (Alfa Slab One, Archivo, Archivo Narrow) empaquetadas.

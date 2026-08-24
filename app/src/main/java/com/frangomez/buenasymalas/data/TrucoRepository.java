@@ -71,6 +71,17 @@ public class TrucoRepository {
         });
     }
 
+    /** Como {@link #guardarJugador}, pero devuelve el id nuevo: lo usa el buscador de la mesa
+     * para agregar a la selección al jugador recién creado, sin esperar a que llegue por LiveData. */
+    public void crearJugador(Player player, LongConsumer alCrear) {
+        io.execute(() -> {
+            long id = playerDao.insert(player);
+            if (alCrear != null) {
+                alCrear.accept(id);
+            }
+        });
+    }
+
     // --- Partidas ----------------------------------------------------------------------------
 
     public LiveData<List<Match>> observarPartidas() {
