@@ -24,3 +24,5 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
   pasos y la pantalla que no se apaga durante la partida.
 - Hoja de cantos con envido, truco y flor; el falta envido se calcula sobre el
   marcador del momento.
+- Pantalla de inicio: formato, reglas, alta y edición de jugadores con su color de
+  mitad de cancha, mano exclusiva y la chicana del pie sacada del historial.

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/raiz"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,25 +32,146 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/panel"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
         android:background="@drawable/bg_panel_translucido"
-        android:padding="@dimen/padding_panel">
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="@dimen/padding_panel"
+        android:paddingBottom="@dimen/padding_panel">
 
-        <Space
+        <TextView
+            style="@style/Texto.Kicker.Seccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_formato" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/formato_1v1"
+                style="@style/Texto.Cuerpo.Chip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_chip_formato"
+                android:textColor="@drawable/texto_chip_formato"
+                android:textStyle="bold"
+                android:text="@string/formato_1v1" />
+
+            <TextView
+                android:id="@+id/formato_2v2"
+                style="@style/Texto.Cuerpo.Chip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_chip_formato"
+                android:textColor="@drawable/texto_chip_formato"
+                android:textStyle="bold"
+                android:text="@string/formato_2v2" />
+
+            <TextView
+                android:id="@+id/formato_3v3"
+                style="@style/Texto.Cuerpo.Chip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_chip_formato"
+                android:textColor="@drawable/texto_chip_formato"
+                android:textStyle="bold"
+                android:text="@string/formato_3v3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/con_flor"
+                style="@style/Chip.Pildora"
+                android:text="@string/con_flor" />
+
+            <TextView
+                android:id="@+id/sin_flor"
+                style="@style/Chip.Pildora"
+                android:layout_marginStart="7dp"
+                android:text="@string/sin_flor" />
+
+            <TextView
+                android:id="@+id/a_15"
+                style="@style/Chip.Pildora"
+                android:layout_marginStart="7dp"
+                android:text="@string/a_15" />
+
+            <TextView
+                android:id="@+id/a_30"
+                style="@style/Chip.Pildora"
+                android:layout_marginStart="7dp"
+                android:text="@string/a_30" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Texto.Kicker.Seccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/label_en_la_mesa" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/jugadores"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            tools:itemCount="2"
+            tools:listitem="@layout/fila_jugador" />
+
+        <TextView
+            android:id="@+id/hint_mano"
+            style="@style/Texto.Cuerpo.Secundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/hint_mano" />
+
+        <TextView
+            android:id="@+id/sumar_jugador"
+            style="@style/Texto.Cuerpo.Chip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_punteado"
+            android:textColor="@color/tiza_45"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:text="@string/sumar_jugador" />
+
+        <TextView
+            android:id="@+id/chicana"
+            style="@style/Texto.Cuerpo.Meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/cobre"
+            tools:text="Nacho perdió las últimas 3. Va la revancha." />
 
         <TextView
             android:id="@+id/empezar"
             style="@style/Boton.Primario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/que_empiece" />
     </LinearLayout>
-
 </LinearLayout>
