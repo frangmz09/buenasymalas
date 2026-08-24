@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="madera">#FF3A2317</color>
+    <color name="madera_oscura">#FF2B1A11</color>
+    <color name="madera_negra">#FF1A0F09</color>
+    <color name="barra_inferior">#FF22140D</color>
+    <color name="pano">#FF33301C</color>
+
+    <color name="tiza">#FFF4EFE4</color>
+    <color name="tiza_45">#73F4EFE4</color>
+    <color name="tiza_38">#61F4EFE4</color>
+    <color name="tiza_35">#59F4EFE4</color>
+    <color name="tiza_30">#4DF4EFE4</color>
+    <color name="tiza_25">#40F4EFE4</color>
+    <color name="tiza_22">#38F4EFE4</color>
+    <color name="tiza_20">#33F4EFE4</color>
+    <color name="tiza_14">#24F4EFE4</color>
+    <color name="tiza_12">#1FF4EFE4</color>
+    <color name="tiza_06">#0FF4EFE4</color>
+    <color name="tiza_05">#0DF4EFE4</color>
+
+    <color name="bordo">#FF8A2B20</color>
+    <color name="bordo_sombra">#FF5D1C14</color>
+    <color name="cobre">#FFC98F57</color>
+    <color name="cobre_22">#38C98F57</color>
+    <color name="cobre_20">#33C98F57</color>
+    <color name="cobre_claro">#FFE8C69B</color>
+    <color name="verde">#FF3D6B4A</color>
+
+    <color name="papel">#FFE8E2D6</color>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="borde_papel">#1A2B1A11</color>
+    <color name="negro_22">#382B1A11</color>
+    <color name="scrim">#990A0604</color>
+
+    <color name="cancha_madera">#FF3A2317</color>
+    <color name="cancha_pano">#FF2F4636</color>
+    <color name="cancha_bordo">#FF5D1C14</color>
+    <color name="cancha_azul">#FF23304A</color>
+    <color name="cancha_pizarra">#FF1A1A18</color>
+    <color name="cancha_roble">#FF6B4A1F</color>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- El mockup esta a 340x720 @1x sobre un telefono de 360dp: los px se leen como dp. -->
+    <dimen name="padding_pantalla">18dp</dimen>
+    <dimen name="padding_panel">16dp</dimen>
+
+    <dimen name="gap_chico">9dp</dimen>
+    <dimen name="gap_medio">12dp</dimen>
+    <dimen name="gap_grande">16dp</dimen>
+
+    <dimen name="radio_sheet">20dp</dimen>
+    <dimen name="radio_boton_primario">13dp</dimen>
+    <dimen name="radio_tarjeta">11dp</dimen>
+    <dimen name="radio_fila">10dp</dimen>
+    <dimen name="radio_chip">9dp</dimen>
+
+    <dimen name="avatar_fila">38dp</dimen>
+    <dimen name="avatar_perfil">60dp</dimen>
+
+    <dimen name="cuadrado_marcador">40dp</dimen>
+    <dimen name="gap_cuadrados">5dp</dimen>
+    <dimen name="divisor_cancha">3dp</dimen>
+
+    <dimen name="boton_punto_ancho">52dp</dimen>
+    <dimen name="boton_punto_alto">48dp</dimen>
+    <dimen name="obturador">62dp</dimen>
+
+    <dimen name="sombra_tecla">4dp</dimen>
+</resources>
