@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- La fila "+ Crear a…": la única acción bordó en una lista de filas blancas. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/bordo" />
+    <corners android:radius="10dp" />
+</shape>

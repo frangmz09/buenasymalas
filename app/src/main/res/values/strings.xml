@@ -28,6 +28,10 @@
     <string name="hint_alias">Apodo de perdedor (ej: El Perro)</string>
     <string name="guardar">Guardar</string>
     <string name="elegir_color">SU MITAD DE CANCHA</string>
+    <string name="titulo_sumar_jugador">Sumar jugador</string>
+    <string name="hint_buscar_jugador">Buscar por nombre…</string>
+    <string name="crear_a">+ Crear a \"%1$s\"</string>
+    <string name="mesa_vacia_para_buscar">Escribí un nombre para agregar a alguien.</string>
     <string name="stats_jugador">%1$d jugadas · %2$d ganadas</string>
 
     <!-- Marcador -->
