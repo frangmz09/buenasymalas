@@ -1,0 +1,23 @@
+# Gradle / Android
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/app/build/
+/app/release/
+
+# Firmas y secretos
+*.jks
+*.keystore
+keystore.properties
+
+# Artefactos
+*.apk
+*.aab
+*.ap_
+*.dex
