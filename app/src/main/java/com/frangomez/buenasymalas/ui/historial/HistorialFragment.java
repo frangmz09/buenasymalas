@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.frangomez.buenasymalas.R;
@@ -53,6 +54,9 @@ public class HistorialFragment extends Fragment {
         binding.cabecera.setBackground(new WoodDrawable(
                 ContextCompat.getColor(requireContext(), R.color.madera),
                 getResources().getDisplayMetrics().density));
+
+        binding.volver.getRoot().setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigateUp());
 
         binding.partidas.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.partidas.setAdapter(adapter);

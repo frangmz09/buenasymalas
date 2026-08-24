@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Touch target de 44dp, reutilizado con <include> en las pantallas a las que se llega
+     tocando algo (Perfil, Historial, Museo). El ícono queda más chico que el target a
+     propósito: 44dp es el mínimo cómodo para el dedo, no el tamaño visual del trazo. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="44dp"
+    android:layout_height="44dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:contentDescription="@string/volver">
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_volver"
+        android:importantForAccessibility="no" />
+</FrameLayout>

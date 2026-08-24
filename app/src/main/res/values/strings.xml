@@ -112,6 +112,9 @@
     <string name="meta_museo">%1$d — %2$d · %3$s</string>
     <string name="pie_museo">Todo queda en el teléfono. Sin cuenta, sin internet.</string>
 
+    <!-- Navegación -->
+    <string name="volver">Volver</string>
+
     <!-- Perfil -->
     <string name="alias_fmt">ALIAS: %1$s</string>
     <string name="jugadas">JUGADAS</string>
