@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/papel"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@color/bordo"
+            android:paddingTop="22dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/avatar"
+                style="@style/Texto.Titulo"
+                android:layout_width="@dimen/avatar_perfil"
+                android:layout_height="@dimen/avatar_perfil"
+                android:gravity="center"
+                android:textSize="26sp"
+                android:textColor="@color/bordo"
+                tools:text="N" />
+
+            <TextView
+                android:id="@+id/nombre"
+                style="@style/Texto.Titulo.Perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:text="Nacho" />
+
+            <TextView
+                android:id="@+id/alias"
+                style="@style/Texto.Kicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="11sp"
+                android:letterSpacing="0.14"
+                android:textColor="@color/cobre_claro"
+                tools:text="ALIAS: EL PERRO" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/blanco"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp">
+
+            <LinearLayout style="@style/Stat">
+                <TextView
+                    android:id="@+id/jugadas"
+                    style="@style/Texto.Score.Stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/madera"
+                    tools:text="20" />
+
+                <TextView
+                    style="@style/Texto.Kicker.Stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/negro_22"
+                    android:text="@string/jugadas" />
+            </LinearLayout>
+
+            <View style="@style/DivisorStat" />
+
+            <LinearLayout style="@style/Stat">
+                <TextView
+                    android:id="@+id/ganadas"
+                    style="@style/Texto.Score.Stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/verde"
+                    tools:text="7" />
+
+                <TextView
+                    style="@style/Texto.Kicker.Stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/negro_22"
+                    android:text="@string/ganadas" />
+            </LinearLayout>
+
+            <View style="@style/DivisorStat" />
+
+            <LinearLayout style="@style/Stat">
+                <TextView
+                    android:id="@+id/perdidas"
+                    style="@style/Texto.Score.Stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/bordo"
+                    tools:text="13" />
+
+                <TextView
+                    style="@style/Texto.Kicker.Stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/negro_22"
+                    android:text="@string/perdidas" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/padding_pantalla"
+            android:paddingEnd="@dimen/padding_pantalla"
+            android:paddingTop="18dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                style="@style/Texto.Kicker.Seccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/negro_22"
+                android:text="@string/rivales" />
+
+            <TextView
+                android:id="@+id/sin_rivales"
+                style="@style/Texto.Cuerpo.Secundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/negro_22"
+                android:visibility="gone"
+                android:text="@string/sin_rivales" />
+
+            <LinearLayout
+                android:id="@+id/rivales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                style="@style/Texto.Kicker.Seccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:textColor="@color/negro_22"
+                android:text="@string/su_mitad_de_cancha" />
+
+            <LinearLayout
+                android:id="@+id/colores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/preview_izq"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <com.frangomez.buenasymalas.ui.DashedLineView
+                    android:layout_width="@dimen/divisor_cancha"
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:id="@+id/preview_der"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/pano" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Texto.Cuerpo.Secundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/negro_22"
+                android:text="@string/hint_mitad_de_cancha" />
+
+            <TextView
+                style="@style/Texto.Kicker.Seccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:textColor="@color/negro_22"
+                android:text="@string/peor_derrota" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_tarjeta_oscura"
+                android:padding="14dp">
+
+                <TextView
+                    android:id="@+id/peor_resultado"
+                    style="@style/Texto.Cuerpo.Nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Rocho 30 — 4 Nacho" />
+
+                <TextView
+                    android:id="@+id/peor_meta"
+                    style="@style/Texto.Cuerpo.Secundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    tools:text="14 de junio" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/editar"
+                style="@style/Boton.Secundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/madera_oscura"
+                android:background="@drawable/bg_fila_blanca"
+                android:text="@string/editar_nombre_y_alias" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -137,6 +137,21 @@
         <item name="android:paddingBottom">7dp</item>
     </style>
 
+    <!-- Las tres stats del perfil, separadas por una línea de 1dp. -->
+    <style name="Stat" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="DivisorStat" parent="">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/borde_papel</item>
+    </style>
+
     <!-- Botón primario: bordó con la sombra sólida de 4dp que le da el efecto de tecla. -->
     <style name="Boton.Primario" parent="">
         <item name="android:background">@drawable/bg_btn_primario</item>

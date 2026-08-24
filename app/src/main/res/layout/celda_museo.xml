@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_tarjeta_oscura"
+    android:clipToOutline="true">
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:scaleType="centerCrop"
+        android:background="@color/madera_negra"
+        android:contentDescription="@string/el_museo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/tiza_06"
+        android:padding="9dp">
+
+        <TextView
+            android:id="@+id/titulo"
+            style="@style/Texto.Cuerpo.Chip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="El Perro" />
+
+        <TextView
+            android:id="@+id/meta"
+            style="@style/Texto.Cuerpo.Meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="start"
+            tools:text="15 — 9 · hoy" />
+    </LinearLayout>
+</LinearLayout>

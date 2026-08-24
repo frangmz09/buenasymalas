@@ -91,6 +91,16 @@ public interface MatchDao {
             + " WHERE tm.player_id = :playerId AND m.id = :matchId")
     Long equipoEn(long playerId, long matchId);
 
+    /** Todos los que alguna vez jugaron del otro lado, sin repetir. */
+    @Query("SELECT DISTINCT p.* FROM player p"
+            + " JOIN team_member rival ON rival.player_id = p.id"
+            + " JOIN partida m ON rival.team_id IN (m.team_a_id, m.team_b_id)"
+            + " JOIN team_member propio ON propio.player_id = :playerId"
+            + "   AND propio.team_id IN (m.team_a_id, m.team_b_id)"
+            + " WHERE rival.team_id <> propio.team_id"
+            + " ORDER BY p.name")
+    List<Player> rivalesDe(long playerId);
+
     // --- Récord del equipo armado ------------------------------------------------------------
 
     /**

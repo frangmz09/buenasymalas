@@ -14,6 +14,14 @@
         <action
             android:id="@+id/a_marcador"
             app:destination="@id/marcadorFragment" />
+
+        <action
+            android:id="@+id/a_perfil"
+            app:destination="@id/perfilFragment" />
+
+        <action
+            android:id="@+id/a_galeria"
+            app:destination="@id/galeriaFragment" />
     </fragment>
 
     <fragment
@@ -40,6 +48,40 @@
         android:id="@+id/fotoFragment"
         android:name="com.frangomez.buenasymalas.ui.foto.FotoFragment"
         android:label="Fin de partida"
-        tools:layout="@layout/fragment_foto" />
+        tools:layout="@layout/fragment_foto">
+
+        <action
+            android:id="@+id/de_foto_a_galeria"
+            app:destination="@id/galeriaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.frangomez.buenasymalas.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil">
+
+        <argument android:name="playerId" app:argType="long" />
+
+        <action
+            android:id="@+id/a_historial"
+            app:destination="@id/historialFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historialFragment"
+        android:name="com.frangomez.buenasymalas.ui.historial.HistorialFragment"
+        android:label="Cabeza a cabeza"
+        tools:layout="@layout/fragment_historial">
+
+        <argument android:name="playerA" app:argType="long" />
+        <argument android:name="playerB" app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/galeriaFragment"
+        android:name="com.frangomez.buenasymalas.ui.galeria.GaleriaFragment"
+        android:label="El museo"
+        tools:layout="@layout/fragment_galeria" />
 
 </navigation>

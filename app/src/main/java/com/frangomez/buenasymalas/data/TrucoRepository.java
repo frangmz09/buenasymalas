@@ -198,6 +198,19 @@ public class TrucoRepository {
         return matchDao.integrantes(teamId);
     }
 
+    public List<Match> cruces(long playerA, long playerB) {
+        return matchDao.cruces(playerA, playerB);
+    }
+
+    public Long equipoEn(long playerId, long matchId) {
+        return matchDao.equipoEn(playerId, matchId);
+    }
+
+    /** Los rivales con los que ya se cruzó, para la sección RIVALES del perfil. */
+    public List<Player> rivalesDe(long playerId) {
+        return matchDao.rivalesDe(playerId);
+    }
+
     // --- Fotos -------------------------------------------------------------------------------
 
     public LiveData<List<PhotoDao.FotoDeMuseo>> observarMuseo() {
@@ -206,6 +219,10 @@ public class TrucoRepository {
 
     public LiveData<Integer> derrotasDocumentadas() {
         return matchDao.derrotasDocumentadas();
+    }
+
+    public Photo fotoDe(long matchId) {
+        return photoDao.dePartida(matchId);
     }
 
     public void guardarFoto(Photo photo) {

@@ -29,6 +29,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="@string/kicker_inicio" />
+
+        <TextView
+            android:id="@+id/ir_al_museo"
+            style="@style/Texto.Cuerpo.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_chip_pildora"
+            android:textColor="@color/tiza_45"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:text="@string/ir_al_museo" />
     </LinearLayout>
 
     <LinearLayout

@@ -70,7 +70,8 @@ public final class JugadorDialog {
                 .create();
     }
 
-    private static int[] paleta(Context context) {
+    /** Los seis colores de mitad de cancha, en el orden del diseño. */
+    public static int[] paleta(Context context) {
         int[] ids = idsDePaleta(context);
         int[] colores = new int[ids.length];
         for (int i = 0; i < ids.length; i++) {
