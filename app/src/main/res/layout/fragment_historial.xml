@@ -14,13 +14,18 @@
         android:orientation="vertical"
         android:paddingStart="@dimen/padding_pantalla"
         android:paddingEnd="@dimen/padding_pantalla"
-        android:paddingTop="18dp"
+        android:paddingTop="6dp"
         android:paddingBottom="18dp">
+
+        <include
+            android:id="@+id/volver"
+            layout="@layout/fila_volver" />
 
         <TextView
             style="@style/Texto.Kicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="@string/cabeza_a_cabeza" />
 
         <TextView

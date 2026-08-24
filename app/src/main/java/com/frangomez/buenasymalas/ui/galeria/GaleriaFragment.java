@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.frangomez.buenasymalas.R;
@@ -53,6 +54,9 @@ public class GaleriaFragment extends Fragment {
 
         binding.fotos.setLayoutManager(new GridLayoutManager(requireContext(), 2));
         binding.fotos.setAdapter(adapter);
+
+        binding.volver.getRoot().setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigateUp());
 
         repo.derrotasDocumentadas().observe(getViewLifecycleOwner(), cuantas ->
                 binding.contador.setText(

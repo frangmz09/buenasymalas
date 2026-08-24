@@ -61,6 +61,9 @@ public class PerfilFragment extends Fragment {
         circulo.setColor(ContextCompat.getColor(requireContext(), R.color.tiza));
         binding.avatar.setBackground(circulo);
 
+        binding.volver.getRoot().setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigateUp());
+
         repo.observarJugador(playerId).observe(getViewLifecycleOwner(), jugador -> {
             if (jugador != null) {
                 pintarCabecera(jugador);
