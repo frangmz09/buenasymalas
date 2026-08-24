@@ -18,7 +18,7 @@ jobs:
           distribution: temurin
 
       - name: Configurar Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
 
       - name: Tests unitarios
         run: ./gradlew test --no-daemon
