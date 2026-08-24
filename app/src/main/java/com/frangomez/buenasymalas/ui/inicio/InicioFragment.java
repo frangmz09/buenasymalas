@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.frangomez.buenasymalas.R;
 import com.frangomez.buenasymalas.ui.WoodDrawable;
@@ -28,5 +29,8 @@ public class InicioFragment extends Fragment {
         int madera = ContextCompat.getColor(requireContext(), R.color.madera);
         float densidad = getResources().getDisplayMetrics().density;
         view.findViewById(R.id.raiz).setBackground(new WoodDrawable(madera, densidad));
+
+        view.findViewById(R.id.empezar).setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigate(R.id.a_marcador));
     }
 }

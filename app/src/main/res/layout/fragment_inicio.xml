@@ -37,6 +37,19 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:background="@drawable/bg_panel_translucido"
-        android:padding="@dimen/padding_panel" />
+        android:padding="@dimen/padding_panel">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/empezar"
+            style="@style/Boton.Primario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/que_empiece" />
+    </LinearLayout>
 
 </LinearLayout>

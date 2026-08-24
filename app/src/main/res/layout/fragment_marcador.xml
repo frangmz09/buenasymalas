@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/madera_oscura"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/panel_a"
+            layout="@layout/panel_equipo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.frangomez.buenasymalas.ui.DashedLineView
+            android:layout_width="@dimen/divisor_cancha"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/panel_b"
+            layout="@layout/panel_equipo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/barra_inferior"
+        android:paddingStart="@dimen/gap_grande"
+        android:paddingEnd="@dimen/gap_grande"
+        android:paddingTop="@dimen/gap_medio"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/deshacer"
+                style="@style/Boton.Secundario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/deshacer" />
+
+            <TextView
+                android:id="@+id/nueva"
+                style="@style/Boton.Secundario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:text="@string/nueva" />
+
+            <TextView
+                android:id="@+id/cantos"
+                style="@style/Boton.Secundario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_btn_cantos"
+                android:textColor="@color/cobre_claro"
+                android:text="@string/cantos" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/estado"
+            style="@style/Texto.Cuerpo.Meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            tools:text="Rocho arriba por 7 · un tap suma 1" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="7dp"
+    android:background="@drawable/bg_fila_blanca"
+    android:paddingStart="9dp"
+    android:paddingEnd="9dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nombre"
+            style="@style/Texto.Cuerpo.Fila"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Envido" />
+
+        <TextView
+            android:id="@+id/aclaracion"
+            style="@style/Texto.Cuerpo.Meta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro_22"
+            android:gravity="start"
+            tools:text="no querido: 1" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/puntos"
+        style="@style/Texto.Titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:textSize="19sp"
+        android:textColor="@color/bordo"
+        tools:text="2" />
+
+    <TextView
+        android:id="@+id/lado_a"
+        style="@style/Texto.Cuerpo.Chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="88dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:paddingStart="11dp"
+        android:paddingEnd="11dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        tools:text="Rocho" />
+
+    <TextView
+        android:id="@+id/lado_b"
+        style="@style/Texto.Cuerpo.Chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:maxWidth="88dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:paddingStart="11dp"
+        android:paddingEnd="11dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        tools:text="Nacho" />
+</LinearLayout>

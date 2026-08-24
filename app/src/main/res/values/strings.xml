@@ -21,6 +21,8 @@
     <string name="stats_jugador">%1$d jugadas · %2$d ganadas</string>
 
     <!-- Marcador -->
+    <string name="nosotros">Nosotros</string>
+    <string name="ellos">Ellos</string>
     <string name="malas">MALAS</string>
     <string name="buenas">BUENAS</string>
     <string name="deshacer">Deshacer</string>

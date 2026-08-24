@@ -55,6 +55,11 @@ public class TrucoRepository {
         return playerDao.observar(id);
     }
 
+    /** Lectura directa, para el hilo de io: la usa el marcador al armar los equipos. */
+    public Player jugador(long id) {
+        return playerDao.porId(id);
+    }
+
     public void guardarJugador(Player player) {
         io.execute(() -> {
             if (player.id == 0) {
