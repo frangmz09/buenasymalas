@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/madera_oscura"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo"
+        android:textSize="16sp"
+        android:textColor="@color/tiza"
+        android:textColorHint="@color/tiza_35"
+        android:backgroundTint="@color/cobre"
+        android:hint="@string/hint_nombre"
+        android:inputType="textPersonName|textCapWords"
+        android:maxLength="16"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/alias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/archivo"
+        android:textSize="16sp"
+        android:textColor="@color/tiza"
+        android:textColorHint="@color/tiza_35"
+        android:backgroundTint="@color/cobre"
+        android:hint="@string/hint_alias"
+        android:inputType="textCapWords"
+        android:maxLength="24"
+        android:importantForAutofill="no" />
+
+    <TextView
+        style="@style/Texto.Kicker.Seccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/elegir_color" />
+
+    <LinearLayout
+        android:id="@+id/colores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" />
+</LinearLayout>

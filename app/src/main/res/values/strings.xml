@@ -18,6 +18,16 @@
     <string name="hint_mano">Tocá MANO para elegir quién reparte primero.</string>
     <string name="sumar_jugador">+ Sumar jugador</string>
     <string name="que_empiece">Que empiece</string>
+    <string name="chicana_racha">%1$s perdió las últimas %2$d. Va la revancha.</string>
+    <string name="chicana_invicto">%1$s viene ganando %2$d al hilo. Alguien tiene que pararlo.</string>
+    <string name="chicana_primera">Primera partida de la mesa. Alguien va a quedar en el museo.</string>
+    <string name="faltan_jugadores">Faltan jugadores para un %1$s.</string>
+    <string name="nuevo_jugador">Nuevo jugador</string>
+    <string name="editar_jugador">Editar jugador</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_alias">Apodo de perdedor (ej: El Perro)</string>
+    <string name="guardar">Guardar</string>
+    <string name="elegir_color">SU MITAD DE CANCHA</string>
     <string name="stats_jugador">%1$d jugadas · %2$d ganadas</string>
 
     <!-- Marcador -->

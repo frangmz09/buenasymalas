@@ -122,6 +122,21 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <!-- Chip píldora de las reglas: flor sí/no y puntaje 15/30. -->
+    <style name="Chip.Pildora" parent="Texto.Cuerpo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_chip_pildora</item>
+        <item name="android:textColor">@drawable/texto_chip_pildora</item>
+        <item name="android:paddingStart">13dp</item>
+        <item name="android:paddingEnd">13dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+
     <!-- Botón primario: bordó con la sombra sólida de 4dp que le da el efecto de tecla. -->
     <style name="Boton.Primario" parent="">
         <item name="android:background">@drawable/bg_btn_primario</item>
