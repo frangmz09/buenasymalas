@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores elegibles para la mitad de cancha. El orden es el que se muestra en el perfil. -->
+    <array name="colores_cancha">
+        <item>@color/cancha_madera</item>
+        <item>@color/cancha_pano</item>
+        <item>@color/cancha_bordo</item>
+        <item>@color/cancha_azul</item>
+        <item>@color/cancha_pizarra</item>
+        <item>@color/cancha_roble</item>
+    </array>
+</resources>

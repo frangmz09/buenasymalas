@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- El "0 4px 0 bordo_sombra" del diseno: dos capas desplazadas 4dp, efecto de tecla. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bordo_sombra" />
+            <corners android:radius="13dp" />
+        </shape>
+    </item>
+    <item android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bordo" />
+            <corners android:radius="13dp" />
+        </shape>
+    </item>
+</layer-list>

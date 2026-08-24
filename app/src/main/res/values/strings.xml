@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Buenas y Malas</string>
+
+    <!-- Inicio -->
+    <string name="titulo_truco">TRUCO</string>
+    <string name="kicker_inicio">CONTADOR DE LA MESA</string>
+    <string name="label_formato">FORMATO</string>
+    <string name="formato_1v1">1 v 1</string>
+    <string name="formato_2v2">2 v 2</string>
+    <string name="formato_3v3">3 v 3</string>
+    <string name="con_flor">Con flor</string>
+    <string name="sin_flor">Sin flor</string>
+    <string name="a_15">A 15</string>
+    <string name="a_30">A 30</string>
+    <string name="label_en_la_mesa">EN LA MESA</string>
+    <string name="mano">MANO</string>
+    <string name="hint_mano">Tocá MANO para elegir quién reparte primero.</string>
+    <string name="sumar_jugador">+ Sumar jugador</string>
+    <string name="que_empiece">Que empiece</string>
+    <string name="stats_jugador">%1$d jugadas · %2$d ganadas</string>
+
+    <!-- Marcador -->
+    <string name="malas">MALAS</string>
+    <string name="buenas">BUENAS</string>
+    <string name="deshacer">Deshacer</string>
+    <string name="nueva">Nueva</string>
+    <string name="cantos">Cantos</string>
+    <string name="mas">+</string>
+    <string name="menos">−</string>
+    <string name="sumar_punto_a">Sumar un punto a %1$s</string>
+    <string name="restar_punto_a">Restar un punto a %1$s</string>
+    <string name="estado_parejos">Vienen parejos · un tap suma 1</string>
+    <string name="estado_arriba">%1$s arriba por %2$d · un tap suma 1</string>
+    <string name="estado_terminada">Partida terminada — sacá la foto</string>
+    <string name="nueva_confirmar_titulo">¿Empezar de nuevo?</string>
+    <string name="nueva_confirmar_cuerpo">Se pierde el marcador de esta partida.</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="empezar_de_nuevo">Empezar de nuevo</string>
+
+    <!-- Cantos -->
+    <string name="hint_cantos">tocá a quién se le suma</string>
+    <string name="canto_envido">Envido</string>
+    <string name="canto_real_envido">Real envido</string>
+    <string name="canto_falta_envido">Falta envido</string>
+    <string name="canto_truco">Truco</string>
+    <string name="canto_retruco">Retruco</string>
+    <string name="canto_vale_cuatro">Vale cuatro</string>
+    <string name="canto_flor">Flor</string>
+    <string name="canto_contraflor">Contraflor</string>
+    <string name="no_querido">no querido: %1$d</string>
+    <string name="falta_hint">lo que le falta al que va arriba</string>
+    <string name="flor_hint">de entrada</string>
+    <string name="cerrar">Cerrar</string>
+
+    <!-- Fin de partida -->
+    <string name="se_acabo">SE ACABÓ</string>
+    <string name="resultado_final">%1$s %2$d — %3$d %4$s</string>
+    <string name="camara_frontal">CÁMARA FRONTAL</string>
+    <string name="flash">FLASH</string>
+    <string name="galeria">Galería</string>
+    <string name="girar">Girar</string>
+    <string name="sacar_foto">Sacar la foto</string>
+    <string name="pie_foto">La foto se sella con el marcador, la fecha y el apodo. Queda en la galería de chicanas.</string>
+    <string name="saltear">Saltear</string>
+    <string name="sellar_y_guardar">Sellar y guardar</string>
+    <string name="sin_permiso_camara">Sin permiso de cámara. Podés saltear la foto.</string>
+
+    <!-- Historial -->
+    <string name="cabeza_a_cabeza">CABEZA A CABEZA</string>
+    <string name="versus">%1$s vs %2$s</string>
+    <string name="racha_actual">racha actual</string>
+    <string name="racha_valor">%1$s ×%2$d</string>
+    <string name="ultimas_partidas">ÚLTIMAS PARTIDAS</string>
+    <string name="paliza">paliza</string>
+
+    <!-- Galería -->
+    <string name="el_museo">El museo</string>
+    <string name="derrotas_documentadas">%1$d derrotas documentadas</string>
+    <string name="filtro_todas">Todas</string>
+    <string name="filtro_palizas">Palizas</string>
+    <string name="pie_museo">Todo queda en el teléfono. Sin cuenta, sin internet.</string>
+
+    <!-- Perfil -->
+    <string name="alias_fmt">ALIAS: %1$s</string>
+    <string name="jugadas">JUGADAS</string>
+    <string name="ganadas">GANADAS</string>
+    <string name="perdidas">PERDIDAS</string>
+    <string name="rivales">RIVALES</string>
+    <string name="record">%1$d — %2$d</string>
+    <string name="su_mitad_de_cancha">SU MITAD DE CANCHA</string>
+    <string name="hint_mitad_de_cancha">Su lado del marcador siempre se pinta de este color, juegue donde juegue.</string>
+    <string name="peor_derrota">PEOR DERROTA</string>
+    <string name="editar_nombre_y_alias">Editar nombre y alias</string>
+    <string name="lo_sufre">lo sufre</string>
+    <string name="lo_domina">lo domina</string>
+    <string name="invicto">invicto</string>
+</resources>

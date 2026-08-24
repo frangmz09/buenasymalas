@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Los estilos van por rol, no por tamaño suelto: el mismo rol se repite entre pantallas
+         y así un cambio de escala no obliga a tocar seis layouts. -->
+
+    <!-- Alfa Slab One: títulos, nombres y números del marcador. -->
+    <style name="Texto.Titulo" parent="">
+        <item name="android:fontFamily">@font/alfa_slab_one</item>
+        <item name="android:textColor">@color/tiza</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Texto.Titulo.Pantalla">
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="Texto.Titulo.Grande">
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="Texto.Titulo.Seccion">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Texto.Titulo.Perfil">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Texto.Titulo.Historial">
+        <item name="android:textSize">27sp</item>
+    </style>
+
+    <style name="Texto.Titulo.Sheet">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/madera_oscura</item>
+    </style>
+
+    <style name="Texto.Titulo.Equipo">
+        <item name="android:textSize">21sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- El puntaje grande del marcador. -->
+    <style name="Texto.Score" parent="Texto.Titulo">
+        <item name="android:textSize">66sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Texto.Score.Historial">
+        <item name="android:textSize">46sp</item>
+    </style>
+
+    <style name="Texto.Score.Stat">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- Archivo Narrow en mayúscula: kickers y etiquetas de sección. -->
+    <style name="Texto.Kicker" parent="">
+        <item name="android:fontFamily">@font/archivo_narrow</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.27</item>
+        <item name="android:textColor">@color/cobre</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Etiqueta de zona sobre el marcador: 10sp con letter-spacing 2px = 0.2em. -->
+    <style name="Texto.Kicker.Zona">
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.2</item>
+    </style>
+
+    <!-- Etiqueta de sección sobre panel oscuro: 11sp, spacing 1.4px. -->
+    <style name="Texto.Kicker.Seccion">
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.13</item>
+        <item name="android:textColor">@color/tiza_45</item>
+    </style>
+
+    <style name="Texto.Kicker.Stat">
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <!-- Archivo: toda la UI corriente. -->
+    <style name="Texto.Cuerpo" parent="">
+        <item name="android:fontFamily">@font/archivo</item>
+        <item name="android:textColor">@color/tiza</item>
+    </style>
+
+    <style name="Texto.Cuerpo.Nombre">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Texto.Cuerpo.Fila">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/madera_oscura</item>
+    </style>
+
+    <style name="Texto.Cuerpo.Boton">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Texto.Cuerpo.Chip">
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Texto.Cuerpo.Secundario">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/tiza_45</item>
+    </style>
+
+    <style name="Texto.Cuerpo.Meta">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/tiza_35</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Botón primario: bordó con la sombra sólida de 4dp que le da el efecto de tecla. -->
+    <style name="Boton.Primario" parent="">
+        <item name="android:background">@drawable/bg_btn_primario</item>
+        <item name="android:fontFamily">@font/alfa_slab_one</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/tiza</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">17dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Boton.Secundario" parent="">
+        <item name="android:background">@drawable/bg_btn_secundario</item>
+        <item name="android:fontFamily">@font/archivo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/tiza</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+</resources>
