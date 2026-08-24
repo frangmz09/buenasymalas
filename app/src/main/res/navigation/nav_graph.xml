@@ -30,6 +30,16 @@
         <argument android:name="conFlor" app:argType="boolean" android:defaultValue="false" />
         <argument android:name="tamEquipo" app:argType="integer" android:defaultValue="1" />
         <argument android:name="mano" app:argType="long" android:defaultValue="0L" />
+
+        <action
+            android:id="@+id/a_foto"
+            app:destination="@id/fotoFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fotoFragment"
+        android:name="com.frangomez.buenasymalas.ui.foto.FotoFragment"
+        android:label="Fin de partida"
+        tools:layout="@layout/fragment_foto" />
 
 </navigation>

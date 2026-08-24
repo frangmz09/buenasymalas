@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/madera_negra"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/padding_pantalla"
+        android:paddingEnd="@dimen/padding_pantalla"
+        android:paddingTop="18dp"
+        android:paddingBottom="14dp">
+
+        <TextView
+            style="@style/Texto.Kicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/se_acabo" />
+
+        <TextView
+            android:id="@+id/resultado"
+            style="@style/Texto.Titulo.Grande"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            tools:text="Rocho 30 — 22 Nacho" />
+
+        <TextView
+            android:id="@+id/apodo"
+            style="@style/Texto.Cuerpo.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_chip_apodo"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            tools:text="NACHO ES EL PERRO" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/visor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/padding_pantalla"
+        android:layout_marginEnd="@dimen/padding_pantalla"
+        android:background="@color/madera_oscura">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/sin_camara"
+            style="@style/Texto.Cuerpo.Meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:visibility="gone"
+            android:text="@string/sin_permiso_camara" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/etiqueta_camara"
+                style="@style/Texto.Kicker.Stat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/tiza_45"
+                android:text="@string/camara_frontal" />
+
+            <TextView
+                android:id="@+id/flash"
+                style="@style/Texto.Kicker.Stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tiza_45"
+                android:text="@string/flash" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/galeria"
+                style="@style/Texto.Cuerpo.Boton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/tiza_45"
+                android:text="@string/galeria" />
+
+            <View
+                android:id="@+id/obturador"
+                android:layout_width="@dimen/obturador"
+                android:layout_height="@dimen/obturador"
+                android:background="@drawable/bg_obturador" />
+
+            <TextView
+                android:id="@+id/girar"
+                style="@style/Texto.Cuerpo.Boton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/tiza_45"
+                android:text="@string/girar" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        style="@style/Texto.Cuerpo.Meta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_pantalla"
+        android:layout_marginEnd="@dimen/padding_pantalla"
+        android:layout_marginTop="12dp"
+        android:text="@string/pie_foto" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/padding_pantalla"
+        android:paddingEnd="@dimen/padding_pantalla"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/saltear"
+            style="@style/Boton.Secundario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/saltear" />
+
+        <TextView
+            android:id="@+id/sellar"
+            style="@style/Boton.Primario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:text="@string/sellar_y_guardar" />
+    </LinearLayout>
+</LinearLayout>

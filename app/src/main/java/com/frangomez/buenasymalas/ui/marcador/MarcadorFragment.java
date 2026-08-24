@@ -12,14 +12,17 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.frangomez.buenasymalas.R;
+import com.frangomez.buenasymalas.data.Match;
 import com.frangomez.buenasymalas.data.Player;
 import com.frangomez.buenasymalas.data.TrucoRepository;
 import com.frangomez.buenasymalas.databinding.FragmentMarcadorBinding;
 import com.frangomez.buenasymalas.databinding.PanelEquipoBinding;
 import com.frangomez.buenasymalas.game.Reglas;
 import com.frangomez.buenasymalas.ui.WoodDrawable;
+import com.frangomez.buenasymalas.ui.foto.FotoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +45,10 @@ public class MarcadorFragment extends Fragment {
     private String nombreB = "";
     private int colorA;
     private int colorB;
+    private List<Player> ladoA = new ArrayList<>();
+    private List<Player> ladoB = new ArrayList<>();
+    /** Una partida se guarda una sola vez, por más que se toque de nuevo el marcador. */
+    private boolean guardada;
 
     @Nullable
     @Override
@@ -98,6 +105,61 @@ public class MarcadorFragment extends Fragment {
         }
         vm.sumar(equipoA, puntos);
         refrescar();
+        if (vm.termino()) {
+            cerrarPartida();
+        }
+    }
+
+    /**
+     * Al llegar al objetivo se guarda la partida y se pasa a la foto. Si no hay jugadores
+     * cargados no hay a quién anotarle nada: la partida fue "Nosotros contra Ellos" y termina
+     * en la línea de estado, sin historial ni chicana.
+     */
+    private void cerrarPartida() {
+        if (guardada || ladoA.isEmpty() || ladoB.isEmpty()) {
+            return;
+        }
+        guardada = true;
+
+        Match partida = new Match();
+        partida.playedAt = System.currentTimeMillis();
+        partida.target = vm.objetivo();
+        partida.withFlor = vm.conFlor();
+        partida.teamSize = vm.tamEquipo();
+        partida.scoreA = vm.a();
+        partida.scoreB = vm.b();
+        partida.manoPlayerId = vm.mano();
+
+        boolean ganoA = vm.ganoA();
+        repo.guardarPartida(partida, ids(ladoA), ids(ladoB), ganoA,
+                matchId -> requireActivity().runOnUiThread(() -> irALaFoto(matchId, ganoA)));
+    }
+
+    private List<Long> ids(List<Player> equipo) {
+        List<Long> ids = new ArrayList<>();
+        for (Player p : equipo) {
+            ids.add(p.id);
+        }
+        return ids;
+    }
+
+    /** La cara de la chicana es la del primero del equipo que perdió. */
+    private void irALaFoto(long matchId, boolean ganoA) {
+        if (!isAdded()) {
+            return;
+        }
+        Player perdedor = (ganoA ? ladoB : ladoA).get(0);
+
+        Bundle args = new Bundle();
+        args.putLong(FotoFragment.ARG_MATCH_ID, matchId);
+        args.putString(FotoFragment.ARG_NOMBRE_GANADOR, ganoA ? nombreA : nombreB);
+        args.putString(FotoFragment.ARG_NOMBRE_PERDEDOR, ganoA ? nombreB : nombreA);
+        args.putInt(FotoFragment.ARG_PUNTAJE_GANADOR, ganoA ? vm.a() : vm.b());
+        args.putInt(FotoFragment.ARG_PUNTAJE_PERDEDOR, ganoA ? vm.b() : vm.a());
+        args.putLong(FotoFragment.ARG_PERDEDOR_ID, perdedor.id);
+        args.putString(FotoFragment.ARG_ALIAS, perdedor.alias);
+
+        NavHostFragment.findNavController(this).navigate(R.id.a_foto, args);
     }
 
     /**
@@ -112,6 +174,8 @@ public class MarcadorFragment extends Fragment {
                 return;
             }
             requireActivity().runOnUiThread(() -> {
+                ladoA = a;
+                ladoB = b;
                 nombreA = nombreDe(a, R.string.nosotros);
                 nombreB = nombreDe(b, R.string.ellos);
                 colorA = pintar(binding.panelA, a, R.color.madera, nombreA);
