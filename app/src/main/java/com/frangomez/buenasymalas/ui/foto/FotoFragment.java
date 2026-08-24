@@ -90,6 +90,8 @@ public class FotoFragment extends Fragment {
                 : getString(R.string.apodo_chip, perdedor, alias));
 
         binding.saltear.setOnClickListener(v -> volverAlInicio());
+        binding.galeria.setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigate(R.id.de_foto_a_galeria));
         binding.sellar.setOnClickListener(v -> sacarFoto());
         binding.obturador.setOnClickListener(v -> sacarFoto());
         binding.girar.setOnClickListener(v -> {

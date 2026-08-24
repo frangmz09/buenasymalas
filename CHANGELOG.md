@@ -29,3 +29,12 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
 - Fin de partida con CameraX: resultado, apodo del perdedor y foto guardada en el
   almacenamiento interno. La partida se persiste al llegar al objetivo.
 - Tema propio para los diálogos, que venían con el gris de fábrica.
+- Historial cabeza a cabeza: récord, racha actual, barra de proporción y últimas
+  partidas con miniatura de la foto.
+- El museo de las chicanas: grid de fotos con filtro por jugador y por paliza,
+  contador de derrotas documentadas.
+- Perfil de jugador: stats, rivales con etiqueta ("invicto" / "lo domina" /
+  "lo sufre"), elección de mitad de cancha con preview del marcador, peor derrota
+  y edición de nombre y alias.
+- Navegación completa entre las 6 pantallas: inicio → marcador → foto → museo,
+  y desde el perfil de un jugador a su cabeza a cabeza con cada rival.

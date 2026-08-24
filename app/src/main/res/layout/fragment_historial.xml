@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/papel"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/cabecera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/padding_pantalla"
+        android:paddingEnd="@dimen/padding_pantalla"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            style="@style/Texto.Kicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cabeza_a_cabeza" />
+
+        <TextView
+            android:id="@+id/titulo"
+            style="@style/Texto.Titulo.Historial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Rocho vs Nacho" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/total_a"
+                style="@style/Texto.Score.Historial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="13" />
+
+            <TextView
+                style="@style/Texto.Score.Historial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/tiza_35"
+                android:text="—" />
+
+            <TextView
+                android:id="@+id/total_b"
+                style="@style/Texto.Score.Historial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="7" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    style="@style/Texto.Cuerpo.Secundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/racha_actual" />
+
+                <TextView
+                    android:id="@+id/racha"
+                    style="@style/Texto.Cuerpo.Nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Rocho ×3" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.frangomez.buenasymalas.ui.historial.BarraProporcionView
+            android:id="@+id/proporcion"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/padding_pantalla"
+        android:paddingEnd="@dimen/padding_pantalla"
+        android:paddingTop="16dp">
+
+        <TextView
+            style="@style/Texto.Kicker.Seccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro_22"
+            android:text="@string/ultimas_partidas" />
+
+        <TextView
+            android:id="@+id/vacio"
+            style="@style/Texto.Cuerpo.Secundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/negro_22"
+            android:visibility="gone"
+            android:text="@string/sin_partidas" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/partidas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            tools:listitem="@layout/fila_partida" />
+    </LinearLayout>
+</LinearLayout>

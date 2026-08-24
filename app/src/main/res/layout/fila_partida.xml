@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_fila_blanca"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="11dp"
+    android:paddingBottom="11dp">
+
+    <View
+        android:id="@+id/barra"
+        android:layout_width="6dp"
+        android:layout_height="34dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/resultado"
+            style="@style/Texto.Cuerpo.Fila"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Rocho 30 — 22 Nacho" />
+
+        <TextView
+            android:id="@+id/meta"
+            style="@style/Texto.Cuerpo.Secundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro_22"
+            tools:text="hoy · 1v1" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/miniatura"
+        android:layout_width="@dimen/avatar_fila"
+        android:layout_height="@dimen/avatar_fila"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:contentDescription="@string/galeria" />
+</LinearLayout>

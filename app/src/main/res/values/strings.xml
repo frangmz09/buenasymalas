@@ -90,12 +90,26 @@
     <string name="racha_valor">%1$s ×%2$d</string>
     <string name="ultimas_partidas">ÚLTIMAS PARTIDAS</string>
     <string name="paliza">paliza</string>
+    <string name="sin_partidas">Todavía no jugaron ninguna.</string>
+    <string name="ir_al_museo">El museo →</string>
+    <string name="racha_ganando">%1$s ×%2$d</string>
+    <string name="sin_racha">sin racha</string>
+    <string name="fecha_hoy">hoy</string>
+    <string name="fecha_ayer">ayer</string>
+    <string name="meta_partida">%1$s · %2$s</string>
+    <string name="con_flor_meta">con flor</string>
+    <string name="sin_flor_meta">sin flor</string>
+    <string name="formato_meta">%1$dv%1$d</string>
+    <string name="museo_vacio">Todavía no hay nadie en el museo.</string>
+    <string name="sin_rivales">Todavía no jugó contra nadie.</string>
+    <string name="sin_derrotas">Ninguna todavía.</string>
 
     <!-- Galería -->
     <string name="el_museo">El museo</string>
     <string name="derrotas_documentadas">%1$d derrotas documentadas</string>
     <string name="filtro_todas">Todas</string>
     <string name="filtro_palizas">Palizas</string>
+    <string name="meta_museo">%1$d — %2$d · %3$s</string>
     <string name="pie_museo">Todo queda en el teléfono. Sin cuenta, sin internet.</string>
 
     <!-- Perfil -->

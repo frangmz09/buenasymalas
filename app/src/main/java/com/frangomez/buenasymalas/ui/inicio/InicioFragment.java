@@ -21,6 +21,7 @@ import com.frangomez.buenasymalas.databinding.FragmentInicioBinding;
 import com.frangomez.buenasymalas.game.Reglas;
 import com.frangomez.buenasymalas.ui.WoodDrawable;
 import com.frangomez.buenasymalas.ui.marcador.MarcadorFragment;
+import com.frangomez.buenasymalas.ui.perfil.PerfilFragment;
 
 import java.util.HashMap;
 import java.util.List;
@@ -75,6 +76,8 @@ public class InicioFragment extends Fragment implements JugadoresAdapter.Escucha
         binding.sumarJugador.setOnClickListener(v ->
                 JugadorDialog.crear(requireContext(), null, this::guardar).show());
         binding.empezar.setOnClickListener(v -> empezar());
+        binding.irAlMuseo.setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigate(R.id.a_galeria));
 
         setFormato(tamEquipo);
         setFlor(conFlor);
@@ -121,9 +124,15 @@ public class InicioFragment extends Fragment implements JugadoresAdapter.Escucha
         adapter.setMano(jugador.id);
     }
 
+    /**
+     * La fila lleva al perfil, no al diálogo de edición: desde el perfil se ve el récord contra
+     * cada rival, que es lo que uno quiere mirar antes de empezar. Editar está adentro.
+     */
     @Override
     public void alTocarJugador(Player jugador) {
-        JugadorDialog.crear(requireContext(), jugador, this::guardar).show();
+        Bundle args = new Bundle();
+        args.putLong(PerfilFragment.ARG_PLAYER_ID, jugador.id);
+        NavHostFragment.findNavController(this).navigate(R.id.a_perfil, args);
     }
 
     /** Las stats y la chicana salen de la base, así que se arman fuera del hilo principal. */
