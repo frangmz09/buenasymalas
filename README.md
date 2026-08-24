@@ -14,15 +14,20 @@ En construcción. Ver [CHANGELOG.md](CHANGELOG.md).
 
 ## Pantallas
 
-| | |
-|---|---|
-| **Armar la mesa** | Formato (1v1 / 2v2 / 3v3), con o sin flor, a 15 o a 30, quiénes juegan y quién es mano. |
-| **Marcador** | La pantalla central. Un tap en la mitad de un equipo suma un punto. |
-| **Cantos** | Hoja con envido, truco, flor y sus valores; se toca a quién se le suman. |
-| **Fin de partida** | Cámara frontal para la foto del perdedor, sellada con el marcador. |
-| **Cabeza a cabeza** | Historial entre dos jugadores: récord, racha y últimas partidas. |
-| **El museo** | Galería de las fotos, filtrable por jugador o por paliza. |
-| **Perfil** | Stats, rivales, apodo y el color de su mitad de cancha. |
+<table>
+<tr>
+<td width="25%"><img src="docs/capturas/inicio.png" width="220"><br><b>Armar la mesa</b><br>Formato, reglas, quiénes juegan (con buscador de jugadores existentes) y quién es mano.</td>
+<td width="25%"><img src="docs/capturas/marcador.png" width="220"><br><b>Marcador</b><br>Un tap en la mitad de un equipo suma un punto.</td>
+<td width="25%"><img src="docs/capturas/cantos.png" width="220"><br><b>Cantos</b><br>Envido, truco, flor y sus valores; se toca a quién se le suman.</td>
+<td width="25%"><img src="docs/capturas/fin_partida.png" width="220"><br><b>Fin de partida</b><br>Cámara para la foto del perdedor, sellada con el marcador.</td>
+</tr>
+<tr>
+<td width="25%"><img src="docs/capturas/historial.png" width="220"><br><b>Cabeza a cabeza</b><br>Historial entre dos jugadores: récord, racha y últimas partidas.</td>
+<td width="25%"><img src="docs/capturas/museo.png" width="220"><br><b>El museo</b><br>Galería de las fotos, filtrable por jugador o por paliza.</td>
+<td width="25%"><img src="docs/capturas/perfil.png" width="220"><br><b>Perfil</b><br>Stats, rivales, apodo y el color de su mitad de cancha.</td>
+<td width="25%"><img src="docs/capturas/sumar_jugador.png" width="220"><br><b>Sumar jugador</b><br>Busca entre los que ya jugaron antes; si no hay coincidencia, crea uno nuevo.</td>
+</tr>
+</table>
 
 El diseño de referencia está en [`design/`](design/): `Contador de Truco.dc.html` es el
 prototipo navegable (abrilo en el navegador) y `HANDOFF.md` la especificación visual.
