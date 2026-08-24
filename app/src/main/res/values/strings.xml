@@ -69,6 +69,7 @@
     <string name="se_acabo">SE ACABÓ</string>
     <string name="resultado_final">%1$s %2$d — %3$d %4$s</string>
     <string name="camara_frontal">CÁMARA FRONTAL</string>
+    <string name="camara_trasera">CÁMARA TRASERA</string>
     <string name="flash">FLASH</string>
     <string name="galeria">Galería</string>
     <string name="girar">Girar</string>
@@ -76,6 +77,10 @@
     <string name="pie_foto">La foto se sella con el marcador, la fecha y el apodo. Queda en la galería de chicanas.</string>
     <string name="saltear">Saltear</string>
     <string name="sellar_y_guardar">Sellar y guardar</string>
+    <string name="apodo_chip">%1$s ES %2$s</string>
+    <string name="sin_apodo">%1$s PERDIÓ</string>
+    <string name="foto_guardada">Quedó en el museo.</string>
+    <string name="foto_fallo">No se pudo guardar la foto.</string>
     <string name="sin_permiso_camara">Sin permiso de cámara. Podés saltear la foto.</string>
 
     <!-- Historial -->

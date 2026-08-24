@@ -12,6 +12,24 @@
         <item name="android:navigationBarColor">@color/madera_negra</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="bottomSheetDialogTheme">@style/Theme.BuenasYMalas.BottomSheet</item>
+        <item name="alertDialogTheme">@style/Theme.BuenasYMalas.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.BuenasYMalas.Dialog</item>
+    </style>
+
+    <!-- Sin esto los diálogos vienen con el gris de fábrica y rompen la mesa. -->
+    <style name="Theme.BuenasYMalas.Dialog" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@color/madera_oscura</item>
+        <item name="android:textColorPrimary">@color/tiza</item>
+        <item name="android:textColorSecondary">@color/tiza_45</item>
+        <item name="colorAccent">@color/cobre</item>
+        <item name="buttonBarPositiveButtonStyle">@style/BuenasYMalas.BotonDialogo</item>
+        <item name="buttonBarNegativeButtonStyle">@style/BuenasYMalas.BotonDialogo</item>
+    </style>
+
+    <style name="BuenasYMalas.BotonDialogo" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/cobre_claro</item>
+        <item name="android:fontFamily">@font/archivo</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Theme.BuenasYMalas.BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">

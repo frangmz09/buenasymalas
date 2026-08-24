@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.function.LongConsumer;
 
 /**
  * Única puerta a los datos. Las lecturas salen como {@link LiveData} —Room las actualiza sola—
@@ -89,7 +90,7 @@ public class TrucoRepository {
      * con un update dentro de la misma transacción.
      */
     public void guardarPartida(Match match, List<Long> jugadoresA, List<Long> jugadoresB,
-                               boolean ganoA, Runnable alTerminar) {
+                               boolean ganoA, LongConsumer alGuardar) {
         io.execute(() -> {
             db.runInTransaction(() -> {
                 long matchId = matchDao.insert(match);
@@ -103,8 +104,8 @@ public class TrucoRepository {
                 match.winnerTeamId = ganoA ? teamAId : teamBId;
                 matchDao.update(match);
             });
-            if (alTerminar != null) {
-                alTerminar.run();
+            if (alGuardar != null) {
+                alGuardar.accept(match.id);
             }
         });
     }

@@ -26,3 +26,6 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
   marcador del momento.
 - Pantalla de inicio: formato, reglas, alta y edición de jugadores con su color de
   mitad de cancha, mano exclusiva y la chicana del pie sacada del historial.
+- Fin de partida con CameraX: resultado, apodo del perdedor y foto guardada en el
+  almacenamiento interno. La partida se persiste al llegar al objetivo.
+- Tema propio para los diálogos, que venían con el gris de fábrica.
