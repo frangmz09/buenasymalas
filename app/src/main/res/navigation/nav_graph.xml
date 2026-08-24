@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/inicioFragment">
 
@@ -8,7 +9,27 @@
         android:id="@+id/inicioFragment"
         android:name="com.frangomez.buenasymalas.ui.inicio.InicioFragment"
         android:label="Inicio"
-        tools:layout="@layout/fragment_inicio"
-        xmlns:tools="http://schemas.android.com/tools" />
+        tools:layout="@layout/fragment_inicio">
+
+        <action
+            android:id="@+id/a_marcador"
+            app:destination="@id/marcadorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/marcadorFragment"
+        android:name="com.frangomez.buenasymalas.ui.marcador.MarcadorFragment"
+        android:label="Marcador"
+        tools:layout="@layout/fragment_marcador">
+
+        <argument android:name="jugadoresA" app:argType="long[]" app:nullable="true"
+            android:defaultValue="@null" />
+        <argument android:name="jugadoresB" app:argType="long[]" app:nullable="true"
+            android:defaultValue="@null" />
+        <argument android:name="objetivo" app:argType="integer" android:defaultValue="30" />
+        <argument android:name="conFlor" app:argType="boolean" android:defaultValue="false" />
+        <argument android:name="tamEquipo" app:argType="integer" android:defaultValue="1" />
+        <argument android:name="mano" app:argType="long" android:defaultValue="0L" />
+    </fragment>
 
 </navigation>

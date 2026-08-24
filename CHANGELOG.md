@@ -18,3 +18,9 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
   `TrucoRepository` único.
 - Historial por jugador y por equipo armado: cada equipo guarda un `rosterKey` que
   le da identidad estable a la dupla entre partidas.
+- `ScoreBoardView`, el marcador de cuadraditos dibujado en `Canvas`, con animación
+  del trazo recién ganado.
+- Pantalla de marcador: dos mitades de cancha, un tap por punto, deshacer de veinte
+  pasos y la pantalla que no se apaga durante la partida.
+- Hoja de cantos con envido, truco y flor; el falta envido se calcula sobre el
+  marcador del momento.
