@@ -14,3 +14,7 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
 - `WoodDrawable`, la textura de mesa que acepta el color base por parámetro.
 - `DashedLineView`, la línea punteada de tiza que parte la cancha.
 - `MainActivity` con Navigation Component y la pantalla de inicio en esqueleto.
+- Persistencia con Room: jugadores, equipos, partidas y fotos, detrás de un
+  `TrucoRepository` único.
+- Historial por jugador y por equipo armado: cada equipo guarda un `rosterKey` que
+  le da identidad estable a la dupla entre partidas.
