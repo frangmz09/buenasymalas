@@ -7,20 +7,10 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
-### Fixed
-- Las fotos de la cámara frontal salían rotadas 90° en equipos donde el sensor no
-  viene "derecho" (confirmado en un Samsung real). CameraX escribe la rotación en
-  el tag EXIF sin girar los píxeles del JPEG; las miniaturas del museo y del
-  historial se decodificaban directo sin leerlo. Se agrega `Fotos.miniatura()`,
-  que lee el EXIF con `androidx.exifinterface` y rota el bitmap si hace falta.
+## [1.0.0] - 2026-08-25
 
-### Added
-- Flecha de volver en Perfil, Historial y Museo.
-- "+ Sumar jugador" busca entre los jugadores existentes a medida que se tipea, y
-  ofrece crear uno nuevo si no hay coincidencia. "EN LA MESA" pasa a ser la
-  selección de la partida actual (se recuerda mientras la app esté abierta), no
-  toda la tabla de jugadores como antes.
-- Deslizar una fila en "EN LA MESA" la saca de la partida sin borrarla de la base.
+Primera versión completa: las 6 pantallas del handoff, probadas de punta a punta en un
+celular real.
 
 ### Added
 - Proyecto Gradle con AGP 8.7.3, Java 17, minSdk 26 y viewBinding.
@@ -53,3 +43,17 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
   y edición de nombre y alias.
 - Navegación completa entre las 6 pantallas: inicio → marcador → foto → museo,
   y desde el perfil de un jugador a su cabeza a cabeza con cada rival.
+- Flecha de volver en Perfil, Historial y Museo.
+- "+ Sumar jugador" busca entre los jugadores existentes a medida que se tipea, y
+  ofrece crear uno nuevo si no hay coincidencia. "EN LA MESA" pasa a ser la
+  selección de la partida actual (se recuerda mientras la app esté abierta), no
+  toda la tabla de jugadores como antes.
+- Deslizar una fila en "EN LA MESA" la saca de la partida sin borrarla de la base.
+- Capturas de las 6 pantallas y del buscador de jugadores en el README.
+
+### Fixed
+- Las fotos de la cámara frontal salían rotadas 90° en equipos donde el sensor no
+  viene "derecho" (confirmado en un Samsung real). CameraX escribe la rotación en
+  el tag EXIF sin girar los píxeles del JPEG; las miniaturas del museo y del
+  historial se decodificaban directo sin leerlo. Se agrega `Fotos.miniatura()`,
+  que lee el EXIF con `androidx.exifinterface` y rota el bitmap si hace falta.
