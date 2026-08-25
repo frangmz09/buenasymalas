@@ -1,6 +1,5 @@
 package com.frangomez.buenasymalas.ui.historial;
 
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.frangomez.buenasymalas.R;
+import com.frangomez.buenasymalas.ui.Fotos;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -53,18 +53,11 @@ public class PartidasAdapter extends RecyclerView.Adapter<PartidasAdapter.Fila> 
 
         if (item.fotoPath != null && new File(item.fotoPath).exists()) {
             fila.miniatura.setVisibility(View.VISIBLE);
-            fila.miniatura.setImageBitmap(BitmapFactory.decodeFile(item.fotoPath, muestreo()));
+            fila.miniatura.setImageBitmap(Fotos.miniatura(item.fotoPath, 8));
         } else {
             fila.miniatura.setVisibility(View.GONE);
             fila.miniatura.setImageDrawable(null);
         }
-    }
-
-    /** La miniatura son 38dp: cargar la foto entera para eso es tirar memoria. */
-    private BitmapFactory.Options muestreo() {
-        BitmapFactory.Options opciones = new BitmapFactory.Options();
-        opciones.inSampleSize = 8;
-        return opciones;
     }
 
     @Override

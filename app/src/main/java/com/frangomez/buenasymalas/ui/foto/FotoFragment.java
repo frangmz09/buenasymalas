@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -131,7 +132,14 @@ public class FotoFragment extends Fragment {
 
                 Preview preview = new Preview.Builder().build();
                 preview.setSurfaceProvider(binding.preview.getSurfaceProvider());
-                captura = new ImageCapture.Builder().build();
+                // La Activity queda fija en portrait (ver AndroidManifest), pero sin fijar acá
+                // la rotación de salida, CameraX la toma del Display en el momento del build —
+                // en algunos equipos (confirmado en un Samsung real) sale desfasada y la foto
+                // de la cámara frontal queda girada 90°. Con la orientación siempre fija, no
+                // hace falta consultar el Display: alcanza con pedir 0.
+                captura = new ImageCapture.Builder()
+                        .setTargetRotation(Surface.ROTATION_0)
+                        .build();
 
                 proveedor.unbindAll();
                 proveedor.bindToLifecycle(getViewLifecycleOwner(), selector, preview, captura);

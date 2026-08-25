@@ -1,6 +1,5 @@
 package com.frangomez.buenasymalas.ui.galeria;
 
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.frangomez.buenasymalas.R;
 import com.frangomez.buenasymalas.data.PhotoDao;
 import com.frangomez.buenasymalas.ui.Formatos;
+import com.frangomez.buenasymalas.ui.Fotos;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -50,9 +50,7 @@ public class MuseoAdapter extends RecyclerView.Adapter<MuseoAdapter.Celda> {
 
         File archivo = new File(f.photo.filePath);
         if (archivo.exists()) {
-            BitmapFactory.Options opciones = new BitmapFactory.Options();
-            opciones.inSampleSize = 4;
-            celda.foto.setImageBitmap(BitmapFactory.decodeFile(f.photo.filePath, opciones));
+            celda.foto.setImageBitmap(Fotos.miniatura(f.photo.filePath, 4));
         } else {
             celda.foto.setImageDrawable(null);
         }
