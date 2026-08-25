@@ -7,6 +7,13 @@ y el versionado sigue [SemVer](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+### Fixed
+- Las fotos de la cámara frontal salían rotadas 90° en equipos donde el sensor no
+  viene "derecho" (confirmado en un Samsung real). CameraX escribe la rotación en
+  el tag EXIF sin girar los píxeles del JPEG; las miniaturas del museo y del
+  historial se decodificaban directo sin leerlo. Se agrega `Fotos.miniatura()`,
+  que lee el EXIF con `androidx.exifinterface` y rota el bitmap si hace falta.
+
 ### Added
 - Flecha de volver en Perfil, Historial y Museo.
 - "+ Sumar jugador" busca entre los jugadores existentes a medida que se tipea, y
